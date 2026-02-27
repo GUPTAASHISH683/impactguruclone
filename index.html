@@ -1,358 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ImpactGuru - Crowdfunding for Medical & Social Causes</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://picsum.photos" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-</head>
-<body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- NAV -->
-  <header class="nav-wrapper" id="navbar">
-    <nav class="nav-inner">
-      <a href="#" class="logo">
-        <span class="logo-impact">Impact</span><span class="logo-guru">Guru</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#campaigns">Campaigns</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#testimonials">Stories</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="#campaigns" class="btn btn-outline">Explore</a>
-        <a href="#start" class="btn btn-primary">Start a Campaign</a>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-  </header>
+    <!-- ══ Primary SEO ══ -->
+    <title>ImpactGuru - Crowdfunding for Medical, Education & Social Causes in India</title>
+    <meta name="description" content="ImpactGuru is India's most trusted crowdfunding platform. Raise funds for medical treatment, education, disaster relief & more. Over ₹1,200 Cr raised. Start free in minutes." />
+    <meta name="keywords" content="crowdfunding India, medical crowdfunding, fundraising platform, donate online India, ImpactGuru, medical fundraiser, education fundraiser, charity India, NGO fundraising" />
+    <meta name="author" content="ImpactGuru" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://www.impactguru.com/" />
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-content">
-      <div class="hero-badge">🌟 Trusted by 2M+ donors across India</div>
-      <h1 class="hero-title">
-        Every Rupee<br />
-        <span class="hero-title-accent">Changes a Life</span>
-      </h1>
-      <p class="hero-subtitle">
-        India's most trusted crowdfunding platform for medical emergencies,
-        education, and social causes. Start your campaign in minutes.
-      </p>
-      <div class="hero-actions">
-        <a href="#campaigns" class="btn btn-hero-primary">Donate Now</a>
-        <a href="#start" class="btn btn-hero-secondary">Start Fundraising →</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">₹1,200 Cr+</span>
-          <span class="stat-label">Raised</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">5,00,000+</span>
-          <span class="stat-label">Campaigns</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">20M+</span>
-          <span class="stat-label">Lives Impacted</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-card-float card-1">
-        <img src="https://picsum.photos/seed/child1/300/200" alt="Campaign" width="300" height="200" decoding="async" fetchpriority="high" />
-        <div class="hero-card-info">
-          <p>Rohan's Cancer Treatment</p>
-          <div class="mini-progress"><div style="width:72%"></div></div>
-          <span>72% funded</span>
-        </div>
-      </div>
-      <div class="hero-card-float card-2">
-        <img src="https://picsum.photos/seed/edu2/300/200" alt="Campaign" loading="lazy" width="300" height="200" decoding="async" fetchpriority="low" />
-        <div class="hero-card-info">
-          <p>Education for Tribal Kids</p>
-          <div class="mini-progress"><div style="width:89%"></div></div>
-          <span>89% funded</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ══ Open Graph / Facebook ══ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.impactguru.com/" />
+    <meta property="og:site_name" content="ImpactGuru" />
+    <meta property="og:title" content="ImpactGuru - Crowdfunding for Medical & Social Causes in India" />
+    <meta property="og:description" content="India's most trusted crowdfunding platform. Raise funds for medical emergencies, education and social causes. ₹1,200 Cr+ raised. 20M+ lives impacted." />
+    <meta property="og:image" content="https://www.impactguru.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ImpactGuru - Crowdfunding platform for India" />
+    <meta property="og:locale" content="en_IN" />
 
-  <!-- CAMPAIGNS -->
-  <section class="section" id="campaigns">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Featured Campaigns</span>
-        <h2 class="section-title">Stories That Need You</h2>
-        <p class="section-desc">Real people, real emergencies. Your donation makes the difference.</p>
-      </div>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="medical">Medical</button>
-        <button class="filter-btn" data-filter="education">Education</button>
-        <button class="filter-btn" data-filter="disaster">Disaster Relief</button>
-        <button class="filter-btn" data-filter="animals">Animals</button>
-      </div>
-      <div class="campaigns-grid" id="campaignsGrid">
-        <!-- Cards injected by JS -->
-      </div>
-      <div class="section-footer">
-        <a href="#" class="btn btn-outline-dark">View All Campaigns →</a>
-      </div>
-    </div>
-  </section>
+    <!-- ══ Twitter Card ══ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ImpactGuru" />
+    <meta name="twitter:creator" content="@ImpactGuru" />
+    <meta name="twitter:title" content="ImpactGuru - Crowdfunding for Medical & Social Causes" />
+    <meta name="twitter:description" content="India's most trusted crowdfunding platform. ₹1,200 Cr+ raised, 5L+ campaigns, 20M+ lives impacted." />
+    <meta name="twitter:image" content="https://www.impactguru.com/og-image.png" />
+    <meta name="twitter:image:alt" content="ImpactGuru crowdfunding platform" />
 
-  <!-- HOW IT WORKS -->
-  <section class="section section-alt" id="how">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Simple Process</span>
-        <h2 class="section-title">How ImpactGuru Works</h2>
-      </div>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">01</div>
-          <div class="step-icon">✍️</div>
-          <h3>Start Your Campaign</h3>
-          <p>Fill in your story, set a goal, and launch your fundraiser in under 10 minutes — completely free.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">02</div>
-          <div class="step-icon">📣</div>
-          <h3>Share &amp; Spread</h3>
-          <p>Share across WhatsApp, Facebook, and email. Our team helps promote your campaign to millions.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">03</div>
-          <div class="step-icon">💸</div>
-          <h3>Receive Donations</h3>
-          <p>Donors contribute securely via UPI, cards, or net banking. Funds reach you quickly and safely.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">04</div>
-          <div class="step-icon">🎉</div>
-          <h3>Make an Impact</h3>
-          <p>Use the funds, update your supporters with progress, and share the impact you've created.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ══ PWA / App ══ -->
+    <meta name="theme-color" content="#FF5722" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ImpactGuru" />
+    <meta name="application-name" content="ImpactGuru" />
+    <meta name="msapplication-TileColor" content="#FF5722" />
 
-  <!-- CATEGORIES -->
-  <section class="section" id="categories">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Browse by Cause</span>
-        <h2 class="section-title">Find What Moves You</h2>
-      </div>
-      <div class="categories-grid">
-        <div class="cat-card cat-medical">
-          <div class="cat-icon">🏥</div>
-          <h3>Medical</h3>
-          <p>2,34,000+ campaigns</p>
-        </div>
-        <div class="cat-card cat-edu">
-          <div class="cat-icon">📚</div>
-          <h3>Education</h3>
-          <p>89,000+ campaigns</p>
-        </div>
-        <div class="cat-card cat-disaster">
-          <div class="cat-icon">🌊</div>
-          <h3>Disaster Relief</h3>
-          <p>12,000+ campaigns</p>
-        </div>
-        <div class="cat-card cat-animals">
-          <div class="cat-icon">🐾</div>
-          <h3>Animal Welfare</h3>
-          <p>34,000+ campaigns</p>
-        </div>
-        <div class="cat-card cat-women">
-          <div class="cat-icon">👩</div>
-          <h3>Women &amp; Girls</h3>
-          <p>56,000+ campaigns</p>
-        </div>
-        <div class="cat-card cat-environment">
-          <div class="cat-icon">🌿</div>
-          <h3>Environment</h3>
-          <p>18,000+ campaigns</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ══ Geo targeting ══ -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="general" />
 
-  <!-- TESTIMONIALS -->
-  <section class="section section-dark" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag light">Real Stories</span>
-        <h2 class="section-title light">Words from Our Community</h2>
-      </div>
-      <div class="testimonials-track" id="testimonialsTrack">
-        <div class="testimonial-card">
-          <div class="quote-mark">"</div>
-          <p>ImpactGuru helped us raise ₹18 lakh for my son's kidney transplant in just 3 weeks. The support from strangers gave us hope we didn't think was possible.</p>
-          <div class="testimonial-author">
-            <img src="https://picsum.photos/seed/mom1/60/60" alt="Priya" loading="lazy" width="60" height="60" decoding="async" fetchpriority="low" />
-            <div>
-              <strong>Priya Sharma</strong>
-              <span>Mumbai, Maharashtra</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark">"</div>
-          <p>I started a campaign for my village school's library. Over 400 donors from across India contributed. The kids now have books they've never dreamed of owning.</p>
-          <div class="testimonial-author">
-            <img src="https://picsum.photos/seed/teacher2/60/60" alt="Ramesh" loading="lazy" width="60" height="60" decoding="async" fetchpriority="low" />
-            <div>
-              <strong>Ramesh Nair</strong>
-              <span>Kozhikode, Kerala</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark">"</div>
-          <p>After the floods in Assam, ImpactGuru's disaster relief campaign reached us within days. The platform connects hearts across India instantly.</p>
-          <div class="testimonial-author">
-            <img src="https://picsum.photos/seed/flood3/60/60" alt="Anjali" loading="lazy" width="60" height="60" decoding="async" fetchpriority="low" />
-            <div>
-              <strong>Anjali Das</strong>
-              <span>Guwahati, Assam</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark">"</div>
-          <p>As a donor, I love how transparent ImpactGuru is. I can see exactly where my money goes and get regular updates. Donated to 12 campaigns this year!</p>
-          <div class="testimonial-author">
-            <img src="https://picsum.photos/seed/donor4/60/60" alt="Vikram" loading="lazy" width="60" height="60" decoding="async" fetchpriority="low" />
-            <div>
-              <strong>Vikram Patel</strong>
-              <span>Ahmedabad, Gujarat</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-dots" id="testimonialDots"></div>
-    </div>
-  </section>
+    <!-- ══ Icons ══ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/pwa-192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
-  <!-- START CAMPAIGN CTA -->
-  <section class="section section-cta" id="start">
-    <div class="container">
-      <div class="cta-box">
-        <div class="cta-left">
-          <h2>Ready to Make a Difference?</h2>
-          <p>Start your fundraiser today — free to create, zero platform fee for medical campaigns.</p>
-          <div class="cta-trust">
-            <span>✅ 100% Secure</span>
-            <span>✅ Zero Platform Fee</span>
-            <span>✅ 24/7 Support</span>
-          </div>
-        </div>
-        <div class="cta-right">
-          <a href="#" class="btn btn-cta">Start Your Campaign →</a>
-          <a href="#campaigns" class="btn btn-cta-secondary">Explore Campaigns</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- ══ Performance ══ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.paypal.com" />
+    <link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" />
+    </noscript>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="logo footer-logo">
-            <span class="logo-impact">Impact</span><span class="logo-guru">Guru</span>
-          </a>
-          <p>India's most trusted crowdfunding platform since 2014. Empowering millions through the power of giving.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Twitter">𝕏</a>
-            <a href="#" aria-label="Instagram">▲</a>
-            <a href="#" aria-label="LinkedIn">in</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Fundraise For</h4>
-          <ul>
-            <li><a href="#">Medical Treatment</a></li>
-            <li><a href="#">Cancer Care</a></li>
-            <li><a href="#">Child Education</a></li>
-            <li><a href="#">NGO Campaigns</a></li>
-            <li><a href="#">Disaster Relief</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Success Stories</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Help Centre</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Refund Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2024 ImpactGuru Clone (Static Demo). All rights reserved. Content is for demonstration only.</p>
-        <p class="footer-disclaimer">PayPal integration uses sandbox mode. No real transactions are processed.</p>
-      </div>
-    </div>
-  </footer>
+    <!-- ══ JSON-LD: Organization ══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ImpactGuru",
+      "alternateName": "Impact Guru",
+      "url": "https://www.impactguru.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.impactguru.com/favicon.svg",
+        "width": 192,
+        "height": 192
+      },
+      "description": "India's most trusted crowdfunding platform for medical, education and social causes.",
+      "foundingDate": "2014",
+      "areaServed": "IN",
+      "sameAs": [
+        "https://www.facebook.com/ImpactGuru",
+        "https://twitter.com/ImpactGuru",
+        "https://www.instagram.com/impactguru",
+        "https://www.linkedin.com/company/impactguru"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": "IN"
+      }
+    }
+    </script>
 
-  <!-- PAYPAL DONATE MODAL -->
-  <div class="modal-overlay" id="donateModal">
-    <div class="modal">
-      <button class="modal-close" id="modalClose">✕</button>
-      <div class="modal-header">
-        <h3 id="modalCampaignTitle">Donate to Campaign</h3>
-        <p>Your generosity saves lives</p>
-      </div>
-      <div class="modal-body">
-        <div class="amount-grid">
-          <button class="amount-btn" data-amount="100">₹100</button>
-          <button class="amount-btn" data-amount="500">₹500</button>
-          <button class="amount-btn active" data-amount="1000">₹1,000</button>
-          <button class="amount-btn" data-amount="2000">₹2,000</button>
-          <button class="amount-btn" data-amount="5000">₹5,000</button>
-          <button class="amount-btn" data-amount="10000">₹10,000</button>
-        </div>
-        <div class="custom-amount">
-          <label>Or enter custom amount (₹)</label>
-          <input type="number" id="customAmount" placeholder="Enter amount" min="10" />
-        </div>
-        <div class="selected-amount-display">
-          Donating: <strong id="selectedAmountDisplay">₹1,000</strong>
-        </div>
-        <!-- PayPal SDK Button Container -->
-        <div id="paypal-button-container"></div>
-        <p class="modal-note">🔒 Secured by PayPal. You'll be redirected to complete payment safely.</p>
-      </div>
-    </div>
-  </div>
+    <!-- ══ JSON-LD: WebSite + Sitelinks Search ══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ImpactGuru",
+      "url": "https://www.impactguru.com",
+      "description": "India's most trusted crowdfunding platform for medical emergencies, education and social causes.",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.impactguru.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
-  <script src="script.js" defer></script>
-</body>
+    <!-- ══ JSON-LD: FAQ ══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I start a fundraiser on ImpactGuru?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starting a fundraiser on ImpactGuru is free and takes less than 10 minutes. Simply fill in your story, set a fundraising goal, and launch your campaign. Our team will help promote it to millions of donors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a platform fee for medical crowdfunding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ImpactGuru charges zero platform fee for medical campaigns. You keep more of what you raise to fund your treatment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much has ImpactGuru raised in total?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ImpactGuru has raised over ₹1,200 crore through more than 5 lakh campaigns, impacting over 20 million lives across India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is donating on ImpactGuru secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ImpactGuru uses bank-grade 256-bit SSL encryption and partners with trusted payment gateways. All donations are 100% secure."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ══ JSON-LD: BreadcrumbList ══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home",        "item": "https://www.impactguru.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Campaigns",   "item": "https://www.impactguru.com/campaigns" },
+        { "@type": "ListItem", "position": 3, "name": "How It Works","item": "https://www.impactguru.com/how-it-works" }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
