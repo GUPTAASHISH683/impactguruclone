@@ -1,4 +1,4 @@
-// Hero.jsx – SEO: h1 with primary keyword, semantic landmark, ARIA labels
+// Hero.jsx - SEO: h1 with primary keyword, semantic landmark, ARIA labels
 
 const STATS = [
   { num: '₹1,200 Cr+', label: 'Total Raised',      schema: 'fundraising total' },
@@ -44,10 +44,10 @@ export default function Hero() {
   return (
     <section
       id="home"
-      aria-label="ImpactGuru – India's crowdfunding platform for medical and social causes"
+      aria-label="ImpactGuru - India's crowdfunding platform for medical and social causes"
       className="relative min-h-screen bg-hero-gradient flex items-center overflow-hidden pt-16"
     >
-      {/* Decorative backgrounds – aria-hidden */}
+      {/* Decorative backgrounds - aria-hidden */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none"
         style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none"
@@ -61,13 +61,13 @@ export default function Hero() {
             🌟 Trusted by 2M+ donors across India
           </p>
 
-          {/* H1 – primary keyword: "crowdfunding platform India" */}
+          {/* H1 - primary keyword: "crowdfunding platform India" */}
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-5">
             India's&nbsp;#1<br />
             <span className="text-brand-orange">Crowdfunding Platform</span>
           </h1>
 
-          {/* Subtitle – secondary keywords */}
+          {/* Subtitle - secondary keywords */}
           <p className="text-lg text-white/70 mb-10 max-w-md leading-relaxed">
             Raise funds for <strong className="text-white/90">medical emergencies</strong>, education,
             and social causes. Over ₹1,200 Cr raised. Start your campaign free in minutes.
@@ -86,7 +86,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Stats – wrapped in dl for semantic key-value meaning */}
+          {/* Stats - wrapped in dl for semantic key-value meaning */}
           <dl className="flex items-center gap-8 flex-wrap">
             {STATS.map((s, i) => (
               <div key={s.label} className="flex items-center gap-8">
@@ -100,9 +100,9 @@ export default function Hero() {
           </dl>
         </div>
 
-        {/* Floating preview cards – decorative, hidden from AT */}
+        {/* Floating preview cards - decorative, hidden from AT */}
         <div className="hidden xl:flex flex-col gap-5 flex-shrink-0" aria-hidden="true">
-          {FLOAT_CARDS.map((card, i) => (
+          {FLOAT_CARDS.map((card) => (
             <FloatCard key={card.title} card={card} />
           ))}
         </div>

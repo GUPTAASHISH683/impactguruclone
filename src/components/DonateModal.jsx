@@ -134,7 +134,7 @@ export default function DonateModal({ campaign, onClose }) {
                   })
                 }
                 onApprove={(_data, actions) =>
-                  actions.order.capture().then((details) => {
+                  actions.order.capture().then(() => {
                     onClose()
                     setToast(`Your donation of ₹${amount.toLocaleString('en-IN')} was received. You're making a real difference!`)
                   })

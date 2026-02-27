@@ -1,4 +1,4 @@
-// Footer.jsx – SEO: contentinfo landmark, address schema, keyword-rich anchor text, breadcrumb nav
+// Footer.jsx - SEO: contentinfo landmark, address schema, keyword-rich anchor text, breadcrumb nav
 
 const LINKS = {
   'Fundraise For': [

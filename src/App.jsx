@@ -15,17 +15,17 @@ export default function App() {
 
       {/*
         Semantic document outline:
-        <header> (Navbar) – role=banner
+        <header> (Navbar) - role=banner
         <main>
-          <section> Hero         – #home
-          <section> CampaignList – #campaigns  (h2: "Fundraising Campaigns…")
-          <section> HowItWorks   – #how        (h2: "How to Start a Crowdfunding Campaign")
-          <section> Categories   – #categories (h2: "Crowdfunding Categories")
-          <section> Testimonials – #testimonials (h2: "What Our Donors Say")
-          <section> FAQ          – #faq        (h2: "Frequently Asked Questions")
-          <section> CTASection   – #start      (h2: "Start Your Free Campaign Today")
+          <section> Hero         - #home
+          <section> CampaignList - #campaigns  (h2: "Fundraising Campaigns…")
+          <section> HowItWorks   - #how        (h2: "How to Start a Crowdfunding Campaign")
+          <section> Categories   - #categories (h2: "Crowdfunding Categories")
+          <section> Testimonials - #testimonials (h2: "What Our Donors Say")
+          <section> FAQ          - #faq        (h2: "Frequently Asked Questions")
+          <section> CTASection   - #start      (h2: "Start Your Free Campaign Today")
         </main>
-        <footer> (Footer)       – role=contentinfo
+        <footer> (Footer)       - role=contentinfo
       */}
       <main id="main-content" role="main" aria-label="ImpactGuru crowdfunding homepage">
         <Hero />

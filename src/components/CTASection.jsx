@@ -1,11 +1,11 @@
-// CTASection.jsx – SEO: keyword-rich H2, Service schema, ARIA
+// CTASection.jsx - SEO: keyword-rich H2, Service schema, ARIA
 
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  'name': 'Start a Crowdfunding Campaign – ImpactGuru',
+  'name': 'Start a Crowdfunding Campaign - ImpactGuru',
   'provider': { '@type': 'Organization', 'name': 'ImpactGuru' },
   'description': 'Launch a free crowdfunding campaign for medical emergencies, education, and social causes in India.',
   'areaServed': { '@type': 'Country', 'name': 'India' },
@@ -63,7 +63,7 @@ export default function CTASection() {
               className="bg-brand-orange text-white font-semibold text-base px-10 py-4 rounded-2xl text-center border-2 border-brand-orange hover:bg-brand-orange-dk hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-200"
               aria-label="Start your free fundraising campaign on ImpactGuru"
             >
-              Start Your Campaign – It's Free →
+              Start Your Campaign - It's Free →
             </a>
             <a
               href="#campaigns"

@@ -1,4 +1,4 @@
-// Navbar.jsx – SEO: header landmark, skip-to-content link, aria-current, semantic nav
+// Navbar.jsx - SEO: header landmark, skip-to-content link, aria-current, semantic nav
 
 import { useState, useEffect } from 'react'
 
@@ -42,7 +42,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Skip to main content – critical for a11y and Lighthouse */}
+      {/* Skip to main content - critical for a11y and Lighthouse */}
       <a
         href="#campaigns"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm"
@@ -67,7 +67,7 @@ export default function Navbar() {
           <a
             href="/"
             className="font-display text-2xl font-black flex-shrink-0 select-none"
-            aria-label="ImpactGuru – India's crowdfunding platform – Home"
+            aria-label="ImpactGuru - India's crowdfunding platform - Home"
             itemProp="url"
           >
             <span className="text-brand-dark" itemProp="name">Impact</span>

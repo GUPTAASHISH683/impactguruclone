@@ -1,4 +1,4 @@
-// CampaignCard.jsx – SEO: article + schema.org DonateAction JSON-LD, proper heading hierarchy,
+// CampaignCard.jsx - SEO: article + schema.org DonateAction JSON-LD, proper heading hierarchy,
 // aria-label on progress bar, descriptive button text
 
 import { useState } from 'react'

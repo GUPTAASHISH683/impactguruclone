@@ -1,4 +1,4 @@
-# ImpactGuru – React + Vite PWA Clone
+# ImpactGuru - React + Vite PWA Clone
 
 A fully static, production-grade crowdfunding homepage built with **React**, **Vite**, **Tailwind CSS v3**, and **PayPal sandbox** integration. Configured as a **Progressive Web App** (PWA) with offline caching.
 
@@ -88,7 +88,7 @@ impactguru/
 Uses the **official `@paypal/react-paypal-js`** SDK in **sandbox mode**.
 
 When a user clicks **Donate** on any campaign card:
-1. A modal opens with preset amounts (₹100 – ₹10,000) or a custom amount.
+1. A modal opens with preset amounts (₹100 - ₹10,000) or a custom amount.
 2. The `PayPalScriptProvider` loads the sandbox SDK lazily.
 3. `PayPalButtons` creates an order converting INR → USD (÷83).
 4. On approval, a success toast is shown. No backend required.

@@ -1,4 +1,4 @@
-// HowItWorks.jsx – SEO: HowTo schema, ordered list, h2/h3 hierarchy
+// HowItWorks.jsx - SEO: HowTo schema, ordered list, h2/h3 hierarchy
 
 import { useScrollReveal } from '../hooks/useScrollReveal'
 

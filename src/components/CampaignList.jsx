@@ -1,4 +1,4 @@
-// CampaignList.jsx – SEO: section with aria-labelledby, live region for filter results
+// CampaignList.jsx - SEO: section with aria-labelledby, live region for filter results
 
 import { useState } from 'react'
 import CampaignCard from './CampaignCard'

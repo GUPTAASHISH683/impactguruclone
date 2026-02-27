@@ -29,7 +29,7 @@ export const CAMPAIGNS = [
   },
   {
     id: 3,
-    title: 'Assam Flood Victims – Emergency Aid',
+    title: 'Assam Flood Victims - Emergency Aid',
     desc: 'Over 50,000 families displaced by catastrophic flooding. Provide food kits, clean water, and shelter immediately.',
     category: 'disaster',
     label: 'Disaster Relief',

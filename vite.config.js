@@ -9,7 +9,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'ImpactGuru – Crowdfunding for Good',
+        name: 'ImpactGuru - Crowdfunding for Good',
         short_name: 'ImpactGuru',
         description: "India's trusted crowdfunding platform for causes.",
         theme_color: '#FF5722',

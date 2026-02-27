@@ -1,4 +1,4 @@
-// FAQ.jsx – Renders FAQPage structured data + accessible accordion
+// FAQ.jsx - Renders FAQPage structured data + accessible accordion
 // Google uses FAQPage schema for rich results (expanded Q&As in SERP)
 
 import { useState } from 'react'
@@ -11,11 +11,11 @@ const FAQS = [
   },
   {
     q: 'Is there a platform fee for medical crowdfunding?',
-    a: 'ImpactGuru charges zero platform fee for medical campaigns. A small payment processing fee (2–3%) applies, but you keep the vast majority of every donation you receive.',
+    a: 'ImpactGuru charges zero platform fee for medical campaigns. A small payment processing fee (2-3%) applies, but you keep the vast majority of every donation you receive.',
   },
   {
     q: 'How quickly will I receive the donated funds?',
-    a: 'Funds are transferred to your verified bank account within 5–7 working days. For urgent medical cases, we offer expedited transfers on a case-by-case basis.',
+    a: 'Funds are transferred to your verified bank account within 5-7 working days. For urgent medical cases, we offer expedited transfers on a case-by-case basis.',
   },
   {
     q: 'Is donating on ImpactGuru safe and secure?',

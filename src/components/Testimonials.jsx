@@ -1,4 +1,4 @@
-// Testimonials.jsx – SEO: Review schema, blockquote, semantic author markup
+// Testimonials.jsx - SEO: Review schema, blockquote, semantic author markup
 
 import { TESTIMONIALS } from '../data/campaigns'
 import { useScrollReveal } from '../hooks/useScrollReveal'

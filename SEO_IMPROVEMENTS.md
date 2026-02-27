@@ -72,7 +72,7 @@
 - ✅ `ItemList` JSON-LD for categories
 - ✅ `<nav>` landmark with `aria-label`
 - ✅ `<ul>` list with `<li>` items
-- ✅ Keyword-rich anchor text: "Browse Medical Crowdfunding Campaigns – 2,34,000+ campaigns"
+- ✅ Keyword-rich anchor text: "Browse Medical Crowdfunding Campaigns - 2,34,000+ campaigns"
 - ✅ `<a href="/campaigns/medical">` (real links, not `href="#"`)
 
 ### Testimonials (`Testimonials.jsx`)

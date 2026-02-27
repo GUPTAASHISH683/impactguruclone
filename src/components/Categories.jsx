@@ -1,4 +1,4 @@
-// Categories.jsx – SEO: ItemList schema, nav landmark, keyword-rich link text
+// Categories.jsx - SEO: ItemList schema, nav landmark, keyword-rich link text
 
 import { CATEGORIES } from '../data/campaigns'
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -48,7 +48,7 @@ export default function Categories() {
                 <a
                   href={`/campaigns/${cat.id}`}
                   className={`${cat.bg} border-2 ${cat.border} rounded-2xl p-6 flex flex-col items-center text-center hover:-translate-y-1.5 hover:shadow-lg transition-all duration-200 group block`}
-                  aria-label={`Browse ${cat.label} crowdfunding campaigns – ${cat.count} campaigns`}
+                  aria-label={`Browse ${cat.label} crowdfunding campaigns - ${cat.count} campaigns`}
                 >
                   <span aria-hidden="true" className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200 block">
                     {cat.emoji}

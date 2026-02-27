@@ -18,7 +18,7 @@
   }
   * { box-sizing: border-box; }
 
-  /* Focus visible – critical for keyboard navigation & Lighthouse a11y */
+  /* Focus visible - critical for keyboard navigation & Lighthouse a11y */
   :focus-visible {
     outline: 3px solid #FF5722;
     outline-offset: 3px;
