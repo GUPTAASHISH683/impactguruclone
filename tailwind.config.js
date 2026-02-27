@@ -16,8 +16,8 @@ export default {
         }
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Roboto"', 'Georgia', 'serif'],
+        body: ['"Roboto"', 'system-ui', 'sans-serif'],
       },
       animation: {
         'float-slow': 'floatUp 5s ease-in-out infinite',

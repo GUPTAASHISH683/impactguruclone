@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Local Roboto Fonts ===== */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -10,7 +36,7 @@
     text-size-adjust: 100%;
   }
   body {
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Roboto', system-ui, sans-serif;
     @apply bg-white text-brand-dark overflow-x-hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

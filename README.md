@@ -74,7 +74,7 @@ impactguru/
 
 | Feature | Implementation |
 |---|---|
-| Typography | Playfair Display (display) + DM Sans (body) |
+| Typography | Roboto (display) + DM Sans (body) |
 | Color palette | Brand orange `#FF5722`, teal `#00897B`, dark navy `#1A1A2E` |
 | Animations | CSS keyframes via Tailwind (`floatUp`, `fadeUp`, `slideIn`) |
 | Scroll reveal | Single `IntersectionObserver` per section, fires once |
