@@ -1,141 +1,166 @@
-# ImpactGuru - React + Vite PWA Clone
+# 🌟 ImpactGuru – Full-Stack CMS Crowdfunding Platform
 
-A fully static, production-grade crowdfunding homepage built with **React**, **Vite**, **Tailwind CSS v3**, and **PayPal sandbox** integration. Configured as a **Progressive Web App** (PWA) with offline caching.
+A production-grade, CMS-driven crowdfunding platform. **Every word on the frontend is served from the database.**
 
 ---
 
-## 🚀 Quick Start
+## 🏗 Project Structure
 
-### Prerequisites
+```
+impactguru-fullstack/
+├── frontend/               ← React + Vite + Tailwind (unchanged UI)
+│   └── src/
+│       ├── api/client.js   ← API client + endpoint helpers
+│       ├── components/     ← All components now API-driven
+│       └── hooks/useApi.js ← Generic data-fetching hook
+├── backend/
+│   ├── prisma/
+│   │   ├── schema.prisma   ← Full normalized MySQL schema
+│   │   └── seed.js         ← 17 campaigns + all CMS content
+│   └── src/
+│       ├── app.js          ← Express app + routes
+│       ├── server.js       ← HTTP entry point
+│       ├── controllers/    ← Request handlers
+│       ├── services/       ← Business logic + DB queries
+│       ├── routes/         ← Express routers
+│       ├── middleware/     ← Error handler, validation
+│       └── utils/          ← Prisma client, response helpers, pagination
+├── package.json            ← Root (concurrently)
+└── README.md
+```
+
+---
+
+## ⚡ Quick Start
+
+### 1. Prerequisites
 - Node.js ≥ 18
-- npm ≥ 9
+- MySQL 8+ running locally (or via Docker)
 
-### Install & Run
+### 2. Create MySQL database
+```sql
+CREATE DATABASE impactguru CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
 
+### 3. Configure environment
 ```bash
-# 1. Install dependencies
-npm install
+cp backend/.env.example backend/.env
+# Edit backend/.env — set your DATABASE_URL
+```
 
-# 2. Start development server (hot reload)
+`.env` format:
+```
+DATABASE_URL="mysql://root:yourpassword@localhost:3306/impactguru"
+PORT=4000
+NODE_ENV=development
+FRONTEND_URL=http://localhost:5173
+```
+
+### 4. Install all dependencies
+```bash
+npm run install:all
+```
+
+### 5. Run Prisma migrations
+```bash
+npm run db:push        # push schema to DB (dev shortcut)
+# OR
+npm run db:migrate     # create named migration
+```
+
+### 6. Seed the database
+```bash
+npm run db:seed
+```
+Seeds: 17 campaigns, 6 categories, 4 testimonials, 6 FAQs, full navigation, footer, hero content, all section text.
+
+### 7. Start the app
+```bash
 npm run dev
-# → http://localhost:5173
+```
 
-# 3. Build for production
-npm run build
+- **Frontend** → http://localhost:5173  
+- **Backend**  → http://localhost:4000/api/health
 
-# 4. Preview production build
-npm run preview
+---
+
+## 🌍 API Reference
+
+| Method | Endpoint                          | Description                        |
+|--------|-----------------------------------|------------------------------------|
+| GET    | `/api/health`                     | Health check                       |
+| GET    | `/api/navigation?location=header` | Navigation links                   |
+| GET    | `/api/footer`                     | Footer columns, socials, meta      |
+| GET    | `/api/pages/:slug`                | Full page with sections & blocks   |
+| GET    | `/api/pages/:slug/sections/:key`  | Single section + content blocks    |
+| GET    | `/api/campaigns?page=1&limit=10`  | Paginated campaigns                |
+| GET    | `/api/campaigns?category=medical` | Filter by category                 |
+| GET    | `/api/campaigns?urgent=true`      | Filter urgent campaigns            |
+| GET    | `/api/campaigns/:id`              | Single campaign                    |
+| POST   | `/api/campaigns`                  | Create campaign                    |
+| PUT    | `/api/campaigns/:id`              | Update campaign                    |
+| DELETE | `/api/campaigns/:id`              | Delete campaign                    |
+| GET    | `/api/categories`                 | All categories                     |
+| GET    | `/api/testimonials`               | All testimonials                   |
+| GET    | `/api/faqs`                       | All FAQs                           |
+| GET    | `/api/settings?group=general`     | Settings (optionally by group)     |
+| POST   | `/api/settings`                   | Upsert a setting                   |
+
+### Paginated Response Shape
+```json
+{
+  "success": true,
+  "data": [...],
+  "meta": {
+    "page": 1,
+    "limit": 10,
+    "total": 17,
+    "totalPages": 2,
+    "hasNextPage": true,
+    "hasPrevPage": false
+  }
+}
 ```
 
 ---
 
-## 📁 Project Structure
+## 📄 Database Schema Overview
 
-```
-impactguru/
-├── public/
-│   ├── favicon.svg           # Brand favicon
-│   ├── pwa-192.png           # PWA icon 192×192
-│   └── pwa-512.png           # PWA icon 512×512 (maskable)
-│
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx        # Sticky nav with mobile hamburger
-│   │   ├── Hero.jsx          # Full-screen hero with floating cards
-│   │   ├── CampaignCard.jsx  # Individual campaign card + Donate btn
-│   │   ├── CampaignList.jsx  # Filterable grid of campaigns
-│   │   ├── HowItWorks.jsx    # 4-step process section
-│   │   ├── Categories.jsx    # Browse-by-cause grid
-│   │   ├── Testimonials.jsx  # Community stories
-│   │   ├── CTASection.jsx    # Start-a-campaign banner
-│   │   ├── Footer.jsx        # Site footer
-│   │   └── DonateModal.jsx   # PayPal donation modal
-│   │
-│   ├── data/
-│   │   └── campaigns.js      # All hardcoded content
-│   │
-│   ├── hooks/
-│   │   └── useScrollReveal.js # IntersectionObserver hook
-│   │
-│   ├── App.jsx               # Root component
-│   ├── main.jsx              # React entry point
-│   └── index.css             # Tailwind base + custom utilities
-│
-├── index.html                # HTML shell with async font loading
-├── vite.config.js            # Vite + VitePWA config
-├── tailwind.config.js        # Custom theme (colors, fonts, animations)
-├── postcss.config.js         # PostCSS (auto-generated)
-└── package.json
-```
+| Table           | Purpose                                           |
+|-----------------|---------------------------------------------------|
+| `pages`         | URL-addressable pages (home, about, etc.)         |
+| `sections`      | Named blocks within a page (hero, cta, etc.)      |
+| `content_blocks`| Individual key/value content per section          |
+| `navigation`    | Header/footer/mobile nav links                    |
+| `footer_columns`| Footer link column headings                       |
+| `footer_links`  | Individual footer links                           |
+| `footer_socials`| Social media links                                |
+| `footer_meta`   | Address, copyright, disclaimer, legal links       |
+| `campaigns`     | Fundraising cards with pagination support         |
+| `categories`    | Campaign category tags                            |
+| `testimonials`  | User reviews/quotes                               |
+| `faqs`          | Accordion FAQ items                               |
+| `settings`      | Global config flags (typed key/value store)       |
+| `metadata`      | Per-page SEO: title, description, OG tags         |
+| `users`         | Admin/editor/viewer CMS users                     |
 
 ---
 
-## 🎨 Design Highlights
+## 📦 Pagination
 
-| Feature | Implementation |
-|---|---|
-| Typography | Roboto (display) + DM Sans (body) |
-| Color palette | Brand orange `#FF5722`, teal `#00897B`, dark navy `#1A1A2E` |
-| Animations | CSS keyframes via Tailwind (`floatUp`, `fadeUp`, `slideIn`) |
-| Scroll reveal | Single `IntersectionObserver` per section, fires once |
-| Hover effects | `translateY` + shadow (compositor-only, no repaints) |
-| Responsive | Mobile-first, `sm/lg/xl` breakpoints throughout |
+The seed has **17 campaigns** (> 10) so pagination activates automatically.
+
+- Default: `page=1&limit=10`
+- Frontend shows numbered page buttons + Prev/Next
+- Filter by category resets to page 1
+- API response always includes `meta.total`, `meta.totalPages`, `meta.hasNextPage`
 
 ---
 
-## 💳 PayPal Integration
+## 🔧 Useful Commands
 
-Uses the **official `@paypal/react-paypal-js`** SDK in **sandbox mode**.
-
-When a user clicks **Donate** on any campaign card:
-1. A modal opens with preset amounts (₹100 - ₹10,000) or a custom amount.
-2. The `PayPalScriptProvider` loads the sandbox SDK lazily.
-3. `PayPalButtons` creates an order converting INR → USD (÷83).
-4. On approval, a success toast is shown. No backend required.
-
-**To use your own sandbox account:**
-- Go to https://developer.paypal.com → Sandbox Accounts
-- Replace `client-id: 'sb'` in `DonateModal.jsx` with your sandbox Client ID.
-
----
-
-## 📱 PWA Setup
-
-Configured via `vite-plugin-pwa`:
-
-- **Manifest** → `dist/manifest.webmanifest` (name, icons, theme color, display: standalone)
-- **Service Worker** → `dist/sw.js` (Workbox `generateSW` mode)
-- **Precaching** → All JS/CSS/HTML/fonts
-- **Runtime caching** → Google Fonts (CacheFirst, 1 year)
-- **Install prompt** → Browser shows "Add to Home Screen" automatically on mobile
-
-To test PWA locally:
 ```bash
-npm run build && npm run preview
-# Open http://localhost:4173 in Chrome → DevTools → Application → Manifest
+npm run db:studio    # Open Prisma Studio (visual DB browser)
+npm run db:reset     # Drop + re-migrate + re-seed
+npm run build        # Production build of frontend
 ```
-
----
-
-## 🧩 Tech Stack
-
-| Layer | Library |
-|---|---|
-| Framework | React 18 (functional components) |
-| Build tool | Vite 7 |
-| Styling | Tailwind CSS v3 |
-| PWA | vite-plugin-pwa + Workbox |
-| Payments | @paypal/react-paypal-js (sandbox) |
-| Fonts | Google Fonts (async, non-blocking) |
-| Icons | Emoji + SVG (no external icon library) |
-| Images | CSS gradients (no HTTP image requests) |
-
----
-
-## ⚡ Performance Notes
-
-- No external images — campaign thumbnails are **CSS gradient + emoji** (zero network requests)
-- Fonts loaded via `<link rel="preload">` — never block rendering
-- `useScrollReveal` uses a single `IntersectionObserver`, unobserves after first trigger
-- Tailwind purges unused CSS at build time (~5 KB gzipped)
-- PayPal SDK only mounts when modal opens (lazy)
